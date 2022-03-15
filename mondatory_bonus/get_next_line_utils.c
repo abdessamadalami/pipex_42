@@ -6,22 +6,14 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 07:58:10 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/02/23 15:47:41 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/03/12 18:12:56 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-#include "get_next_line.h"
+#include "pipex_42_1337.h"
 
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (*(str + i))
-		i++;
-	return (i);
-}
+size_t	ft_strlen(const char *str);
 
 static int	min_mal(int a, int b)
 {

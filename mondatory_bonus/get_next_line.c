@@ -10,34 +10,8 @@
 /*   Updated: 2021/11/18 09:18:31 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
-#include <unistd.h>
-#include<stdio.h>
-#include<unistd.h>
-#include <fcntl.h>
-#include<stdlib.h>
-#include"get_next_line.h"
-#include "libft.h"
 
-char	*ft_strdup(char *src)
-{
-	char	*ptr;
-	int		len;
-	int		i;
-
-	i = 0;
-	len = ft_strlen(src);
-	ptr = malloc((len + 1) * sizeof (char));
-	if (ptr == NULL)
-		return (0);
-	while (src[i] != '\0')
-	{
-		ptr[i] = src[i];
-		i++;
-	}
-	ptr[i] = '\0';
-	return (ptr);
-}
+#include "pipex_42_1337.h"
 
 int	check_fun(char *s)
 {
@@ -74,7 +48,7 @@ char	*read_join(int fd, char *str, int *k)
 	ptr = malloc(2);
 	while (check_fun(str) == -1 && *k != 0)
 	{
-		*k = read(fd, ptr,1);
+		*k = read(fd, ptr, 1);
 		if (*k == -1)
 		{
 			free(ptr);
@@ -114,27 +88,3 @@ char	*get_next_line(int fd)
 	str = line_remainder(str, index_line);
 	return (line);
 }
-//printf("line {%s} ptr <%s> str <%s>", line, ptr,str);
-// int main()
-// {
-
-//  //int fd = open("nl", O_RDWR);
-//  int fd = open("text.txt", O_RDWR); 
-//  char *c;
-// //  char *line; 
-// //  line = malloc(BUFFER_SIZE);
-// //  int k = read(fd, line, BUFFER_SIZE);
-// // printf(" %d ",k);
-// int index = 0;
-// while (1)
-//  {
-//      c = get_next_line(fd);
-
-// 	 printf("%s", c);
-// 	 if(c == 0)
-// 	     break;
-// 	 index++;
-//  }
-//  close(fd);
-//  system("leaks a.out");
-// }
