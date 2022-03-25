@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 16:17:01 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/03/14 14:00:40 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/03/25 08:04:59 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	process_ing(char **argc, char **env, int index_c, int file)
 	id2 = fork();
 	if (id2 == 0)
 	{
+		close(fd[0]);
 		if (file == -1 && index_c == 2)
 		{
 			free(path);
@@ -106,10 +107,7 @@ void	pipex_42(int argv, char **argc, char **env, int file)
 	id2 = fork();
 	if (id2 == 0)
 		the_last_cmd (argc, env, argv, i);
-	if (strncmp(argc[1], "/dev/random", 12) != 0)
+	while (wait(0) != -1)
 	{
-		while (wait(0) != -1)
-		{
-		}
 	}
 }
